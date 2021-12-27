@@ -1,0 +1,15 @@
+# Server configurations
+server:
+  port: 8080
+
+endpoints:
+  new_employee: "/employee"
+
+database:
+  user: "technical_user"
+  host: "postgres"
+  port: "5432"
+  db: "my_company"
+
+flags:
+  is_stdout: "true"
