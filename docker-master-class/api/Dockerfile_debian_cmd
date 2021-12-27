@@ -17,5 +17,4 @@ USER api
 COPY . /go/src/gitlab.com/andersph/docker-master-class/api
 WORKDIR /go/src/gitlab.com/andersph/docker-master-class/api
 
-ENTRYPOINT [ "/bin/echo", "Hello, "]
-CMD "World!"
+ENTRYPOINT [ "/bin/echo", "Hello, World!"]
