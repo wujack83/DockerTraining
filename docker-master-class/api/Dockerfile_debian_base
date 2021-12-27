@@ -1,0 +1,17 @@
+FROM debian:buster-20211220
+
+RUN mkdir /downloads
+WORKDIR /downloads
+
+RUN apt update && apt install -y wget
+RUN wget https://go.dev/dl/go1.17.5.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+ENV PATH=$PATH:/usr/local/go/bin
+
+RUN useradd -ms /bin/bash api
+USER api 
+
+COPY . /go/src/gitlab.com/andersph/docker-master-class/api
+WORKDIR /go/src/gitlab.com/andersph/docker-master-class/api
+
+ENTRYPOINT [ "bash", "-c", "go run main.go" ]
