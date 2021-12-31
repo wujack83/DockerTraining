@@ -3,8 +3,6 @@ FROM debian:buster-20211220
 LABEL maintainer = "Rolf Seewaldt"
 
 ARG USER_ARG
-ARG GO_PATH_ARG
-ENV GO_PATH_ENV = GO_PATH_ARG
 
 RUN mkdir /downloads
 WORKDIR /downloads
